@@ -93,7 +93,10 @@ iface = gr.Interface(
     outputs=gr.JSON(label="Результат анализа"),
     title="Анализ состояния автомобиля",
     description="Загрузите фотографию автомобиля, чтобы определить его целостность (битый/целый) и чистоту (грязный/чистый).",
-    examples=[["car_example1.jpg"], ["car_example2.jpg"]]  # Добавьте сюда пути к примерам
+    examples=[["data/integrity/train/damaged/0c265959a64be5b9dc10106830be0351_jpeg.rf.8c863da57651bd2584fc83d7af583459.jpg"],
+              ["data/integrity/train/intact/00001.jpg"],
+              ["data/cleanliness/train/clean/download.jpg"],
+              ["data/cleanliness/train/dirty/download (2)(1).jpg"]]  # Добавьте сюда пути к примерам
 )
 
 if __name__ == "__main__":
