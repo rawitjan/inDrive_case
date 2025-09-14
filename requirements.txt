@@ -4,3 +4,4 @@ gradio
 numpy
 Pillow
 scikit-learn
+matplotlib

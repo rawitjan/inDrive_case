@@ -8,11 +8,7 @@ import argparse
 
 
 def train_model(data_dir, model_save_path, num_epochs=10):
-    """
-    Функция для обучения модели классификации изображений.
-    """
     print(f"Starting training for data in {data_dir}")
-
     # Трансформации данных с аугментацией для обучающей выборки
     data_transforms = {
         'train': transforms.Compose([
@@ -39,7 +35,7 @@ def train_model(data_dir, model_save_path, num_epochs=10):
     class_names = image_datasets['train'].classes
 
     print(f"Classes found: {class_names}")
-    if len(class_names) != 2:
+    if len(class_names) != 3:
         raise ValueError("This script is designed for binary classification (2 classes).")
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -99,7 +95,6 @@ def train_model(data_dir, model_save_path, num_epochs=10):
 
             print(f'{phase} Loss: {epoch_loss:.4f} Acc: {epoch_acc:.4f}')
 
-    # Сохранение модели
     torch.save(model.state_dict(), model_save_path)
     print(f"Model saved to {model_save_path}")
 
