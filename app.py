@@ -95,8 +95,8 @@ def create_status_alert(status):
 
 def calculate_overall_score(analysis_results):
     score = 100
-    issues, penalties = [], {'integrity': {'damaged': 40}, 'cleanliness': {'dirty': 10}, 'tires': {'flat': 60},
-                             'glass': {'cracked': 50}}
+    issues, penalties = [], {'integrity': {'damaged': 40}, 'cleanliness': {'dirty': 10}, 'tires': {'flat': 20},
+                             'glass': {'cracked': 35}}
     readable_names = {'integrity': 'Повреждения кузова', 'cleanliness': 'Загрязнение', 'tires': 'Проблема с шинами',
                       'glass': 'Трещины на стекле'}
 
